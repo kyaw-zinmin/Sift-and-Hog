@@ -1,11 +1,10 @@
 import cv2
-import matplotlib.pyplot as plt
 import numpy as np
 
 # helper functions
 # get hr corner image, and hr dst
 def hr_corners(original_image, gray_image, get_dst=False):
-    dst = cv2.cornerHarris(gray_image, 5, 3, 0.02)
+    dst = cv2.cornerHarris(gray_image, 5, 3, 0.04)
     dst = cv2.dilate(dst, None)
 
     thresh = 0.01 * dst.max()
